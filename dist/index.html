@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA</title>
+</head>
+<body>
+    <div id="input-bar">
+        <input id="teamNameInput" type="text" placeholder="Enter team name">
+        <button id="findTeam">Submit</button>
+    </div>
+
+    <div id="container"></div>
+
+    <script id="player-template" type="text/x-handlebars">
+        {{#each player}}
+            <div class='player' data-id={{playerId}}>
+                <div><img src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}"></div>
+                <div id='name'>{{firstName}} {{lastName}}</div>
+                <div id='jerseyNum'>{{jersey}}</div>
+                <img src={{img}}>
+                <div id='position'>{{pos}}</div>
+            </div>
+        {{/each}}
+    </script>
+
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
